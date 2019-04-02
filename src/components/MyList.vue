@@ -38,10 +38,19 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
 export default {
   name: "MyList",
   props: {
     msg: String
+  },
+  method: {
+    UpdateToDo() {
+
+    }
   }
 };
 </script>
@@ -98,7 +107,7 @@ export default {
   border-bottom: 0.8px solid #dbdbdb;
 }
 .checkboxStyle {
-  margin-top:20px;
-  margin-left:10px;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 </style>
