@@ -14,12 +14,24 @@
         </b-col>
       </b-row>
       <b-row md="8">
-        <input class="inputStyle">
-        <input class="inputStyle">
-        <input class="inputStyle">
-        <input class="inputStyle">
-        <input class="inputStyle">
-        <input class="inputStyle">
+        <b-form-checkbox type="checkbox" class="checkboxStyle">
+          <input class="inputStyle">
+        </b-form-checkbox>
+        <b-form-checkbox type="checkbox" class="checkboxStyle">
+          <input class="inputStyle">
+        </b-form-checkbox>
+        <b-form-checkbox type="checkbox" class="checkboxStyle">
+          <input class="inputStyle">
+        </b-form-checkbox>
+        <b-form-checkbox type="checkbox" class="checkboxStyle">
+          <input class="inputStyle">
+        </b-form-checkbox>
+        <b-form-checkbox type="checkbox" class="checkboxStyle">
+          <input class="inputStyle">
+        </b-form-checkbox>
+        <b-form-checkbox type="checkbox" class="checkboxStyle">
+          <input class="inputStyle">
+        </b-form-checkbox>
       </b-row>
     </b-card>
   </div>
@@ -56,6 +68,7 @@ export default {
 }
 .stateBtnStyle:active {
   background-color: #a2cd85;
+  box-shadow: 0 1px 5px 1px rgba(51, 51, 51, 0.5);
 }
 .itemBtnStyle {
   height: 30px;
@@ -69,16 +82,23 @@ export default {
   border: 0px;
   outline: none;
 }
+.itemBtnStyle:active {
+  box-shadow: 0 1px 3px 1px rgba(51, 51, 51, 0.5);
+}
 .btnText {
   font-family: "Noto Sans TC", "Avenir", Helvetica, Arial, sans-serif;
   color: #fff;
 }
 .inputStyle {
-  width: 100%;
-  margin-top: 15px;
+  width: 550px;
+  margin-bottom: 15px;
   border: 0;
   outline: none;
   background: transparent;
   border-bottom: 0.8px solid #dbdbdb;
+}
+.checkboxStyle {
+  margin-top:20px;
+  margin-left:10px;
 }
 </style>
