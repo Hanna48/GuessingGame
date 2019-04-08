@@ -13,43 +13,45 @@
           <button href="#" class="itemBtnStyle btnText">Delete</button>
         </b-col>
       </b-row>
-      <b-row md="8">
-        <b-form-checkbox type="checkbox" class="checkboxStyle">
-          <input class="inputStyle">
-        </b-form-checkbox>
-        <b-form-checkbox type="checkbox" class="checkboxStyle">
-          <input class="inputStyle">
-        </b-form-checkbox>
-        <b-form-checkbox type="checkbox" class="checkboxStyle">
-          <input class="inputStyle">
-        </b-form-checkbox>
-        <b-form-checkbox type="checkbox" class="checkboxStyle">
-          <input class="inputStyle">
-        </b-form-checkbox>
-        <b-form-checkbox type="checkbox" class="checkboxStyle">
-          <input class="inputStyle">
-        </b-form-checkbox>
-        <b-form-checkbox type="checkbox" class="checkboxStyle">
-          <input class="inputStyle">
-        </b-form-checkbox>
+      <b-row md="2">
+        <b-form-input
+          type="text"
+          @keyup.enter="AddTodo(newTodo)"
+          v-model="newTodo"
+          placeholder="input something then hit enter"
+        ></b-form-input>
+        <b-list-group>
+          <b-list-group-item>
+            <b-form-checkbox type="checkbox" class="checkboxStyle">
+              <input class="inputStyle" v-if="haveNewTodo">{{newTodo}}
+            </b-form-checkbox>
+          </b-list-group-item>
+        </b-list-group>
       </b-row>
     </b-card>
   </div>
 </template>
 
-<script>
-import Vue from 'vue';
-import Vuex from 'vuex';
-
-Vue.use(Vuex);
+<script scoped>
 export default {
   name: "MyList",
-  props: {
-    msg: String
+
+  data() {
+    return {
+      newTodo: "",
+    };
+  },
+  computed: {
+    haveNewTodo() {
+      let newTodoText = this.$store.state.newTodo;
+      let haveNewTodo = newTodoText !== "";
+      return haveNewTodo;
+    }
   },
   method: {
-    UpdateToDo() {
-
+    AddTodo(newTodo) {
+      this.$store.dispatch("AddTodo", newTodo);
+      this.newTodo = "";
     }
   }
 };
