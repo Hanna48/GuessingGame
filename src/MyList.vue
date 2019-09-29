@@ -32,7 +32,7 @@ import CurrentTodos from "./components/CurrentTodos.vue";
 import CompletedTodos from "./components/CompletedTodos.vue";
 
 export default {
-  name: "app",
+  name: "MyList",
   components: {
     GetTodo,
     CurrentTodos,

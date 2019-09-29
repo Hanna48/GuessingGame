@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import store from './store.js'
 import BootstrapVue from 'bootstrap-vue'
-import App from './App.vue'
+import MyList from './MyList.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -10,5 +10,5 @@ Vue.use(BootstrapVue)
 
 new Vue({
   store,
-  render: h => h(App),
+  render: h => h(MyList),
 }).$mount('#app')

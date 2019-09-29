@@ -18,7 +18,7 @@ export default new Vuex.Store({
     },
     mutations: {
         GET_TODO(state, todo) {
-            state.newTodo = todo
+            state.newTodo = todo;
         },
         ADD_TODO(state) {
             let todoKey = state.todos.length;
@@ -44,6 +44,7 @@ export default new Vuex.Store({
             todos.splice(todos.indexOf(todo), 1)
             state.todos = todos
             state.newTodo = todo.body
+            
         },
         DELETE_TODO(state, todo) {
             var todos = state.todos

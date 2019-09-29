@@ -1,21 +1,12 @@
 <template>
-  <!-- <div>
-    <b-form-input
-      class="inputStyle"
-      :value="newTodo"
-      @keyup.enter="GetTodo"
-      placeholder="input something need to do!"
-    ></b-form-input>
-    <button href="#" class="itemBtnStyle btnText" @click="AddTodo">Add</button>
-  </div>-->
   <div class="input-group mb-3">
     <input
       type="text"
-      :value="newTodo"
+      v-model="newTodo"
       class="form-control inputStyle"
       placeholder="something need to do!"
-      @keyup.enter="GetTodo"
-    >
+      @keyup.enter="AddTodo"
+    />
     <div class="input-group-append">
       <button
         class="btn btn-outline-secondary itemBtnStyle btnText"
@@ -45,9 +36,14 @@ export default {
     }
   },
   computed: {
-    newTodo() {
-      return this.$store.getters.newTodo;
-    },
+    newTodo: {
+      get: function() {
+        return this.$store.getters.newTodo;
+      },
+      set: function(newTodo) {
+        this.$store.commit("GET_TODO", newTodo);
+      }
+    }
   }
 };
 </script>
