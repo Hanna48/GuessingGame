@@ -8,6 +8,7 @@ export default new Vuex.Store({
     state: {
         todos: [],
         newTodo: "",
+        todoKey: 0,
         isShowUnfinish: true,
         isShowComplete: true,
     },
@@ -21,13 +22,12 @@ export default new Vuex.Store({
             state.newTodo = todo;
         },
         ADD_TODO(state) {
-            let todoKey = state.todos.length;
             state.todos.push({
-                id: todoKey,
+                id: state.todoKey + 1,
                 body: state.newTodo,
                 iscompleted: false,
             })
-            todoKey++;
+            state.todoKey++;
         },
         CLEAR_TODO(state) {
             state.newTodo = ""
@@ -44,7 +44,6 @@ export default new Vuex.Store({
             todos.splice(todos.indexOf(todo), 1)
             state.todos = todos
             state.newTodo = todo.body
-            
         },
         DELETE_TODO(state, todo) {
             var todos = state.todos
