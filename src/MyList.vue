@@ -4,9 +4,9 @@
     <b-card class="mb-2">
       <b-row md="4">
         <b-col md="4">
-          <button href="#" class="stateBtnStyle btnText" @click="ShowAll">All</button>
-          <button href="#" class="stateBtnStyle btnText" @click="ShowUnfinish">Unfinished</button>
-          <button href="#" class="stateBtnStyle btnText" @click="ShowComplete">Completed</button>
+          <button class="stateBtnStyle btnText" @click="ShowAll">All</button>
+          <button class="stateBtnStyle btnText" @click="ShowUnfinish">Unfinished</button>
+          <button class="stateBtnStyle btnText" @click="ShowComplete">Completed</button>
         </b-col>
         <b-col md="8">
           <GetTodo></GetTodo>
