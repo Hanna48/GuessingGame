@@ -38,7 +38,7 @@ export default {
   computed: {
     newTodo: {
       get: function() {
-        return this.$store.getters.newTodo;
+        return this.$store.state.newTodo;
       },
       set: function(newTodo) {
         this.$store.commit("GET_TODO", newTodo);

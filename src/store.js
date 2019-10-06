@@ -13,7 +13,6 @@ export default new Vuex.Store({
         isShowComplete: true,
     },
     getters: {
-        newTodo: state => state.newTodo,
         todos: state => state.todos.filter((todo) => { return !todo.iscompleted }),
         completed: state => state.todos.filter((todo) => { return todo.iscompleted }),
     },
