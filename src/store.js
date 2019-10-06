@@ -40,13 +40,14 @@ export default new Vuex.Store({
         },
         EDIT_TODO(state, todo) {
             var todos = state.todos
-            todos.splice(todos.indexOf(todo), 1)
+            todos.splice(todos.indexOf(todo), 1)//delete this todo in todos
             state.todos = todos
             state.newTodo = todo.body
         },
         DELETE_TODO(state, todo) {
             var todos = state.todos
             todos.splice(todos.indexOf(todo), 1)
+            state.todos = todos
         },
         SHOW_COMPLETE(state) {
             state.isShowComplete = !state.isShowComplete;

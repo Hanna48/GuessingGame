@@ -4,9 +4,9 @@
     <b-row>
       <b-col v-for="(todo,index) in todos" :key="index" md="3" class="contenctStyle">
         <b-form-checkbox @click="Complete(todo)">{{todo.body}}</b-form-checkbox>
-        <button href="#" class="itemBtnStyle btnText" @click="Complete(todo)">Finish</button>
-        <button href="#" class="itemBtnStyle btnText" @click="Edit(todo)">Edit</button>
-        <button href="#" class="itemBtnStyle btnText" @click="Delete(todo)">Delete</button>
+        <button class="itemBtnStyle btnText" @click="Complete(todo)">Finish</button>
+        <button class="itemBtnStyle btnText" @click="Edit(todo)">Edit</button>
+        <button class="itemBtnStyle btnText" @click="Delete(todo)">Delete</button>
         <br>
       </b-col>
     </b-row>
