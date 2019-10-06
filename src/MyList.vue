@@ -14,12 +14,12 @@
       </b-row>
       <b-row md="4">
         <b-col>
-          <CurrentTodos v-show="isShowUnfinish"></CurrentTodos>
+          <CurrentTodos v-if="isShowUnfinish"></CurrentTodos>
         </b-col>
       </b-row>
       <b-row md="4">
         <b-col>
-          <CompletedTodos v-show="isShowComplete"></CompletedTodos>
+          <CompletedTodos v-if="isShowComplete"></CompletedTodos>
         </b-col>
       </b-row>
     </b-card>
