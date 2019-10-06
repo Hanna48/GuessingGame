@@ -1,9 +1,9 @@
 <template>
   <div class="input-group mb-3">
     <input
+      class="form-control inputStyle"
       type="text"
       v-model="newTodo"
-      class="form-control inputStyle"
       placeholder="something need to do!"
       @keyup.enter="AddTodo"
     />
@@ -21,19 +21,10 @@
 export default {
   name: "GetTodo",
   methods: {
-    GetTodo(e) {
-      this.$store.dispatch("GetTodo", e.target.value);
-    },
     AddTodo() {
       this.$store.dispatch("AddTodo");
       this.$store.dispatch("ClearTodo");
     },
-    Edit(todo) {
-      this.$store.dispatch("EditTodo", todo);
-    },
-    Delete(todo) {
-      this.$store.dispatch("DeleteTodo", todo);
-    }
   },
   computed: {
     newTodo: {
