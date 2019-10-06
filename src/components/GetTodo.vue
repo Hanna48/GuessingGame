@@ -22,9 +22,12 @@ export default {
   name: "GetTodo",
   methods: {
     AddTodo() {
-      this.$store.dispatch("AddTodo");
-      this.$store.dispatch("ClearTodo");
-    },
+      if (this.newTodo != "") {
+        this.$store.dispatch("AddTodo");
+        this.$store.dispatch("ClearTodo");
+      } else
+      alert("Please enter something need to do !")
+    }
   },
   computed: {
     newTodo: {
